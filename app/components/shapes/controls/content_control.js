@@ -1,7 +1,8 @@
 import fabric from 'fabric';
+import Control from './control';
 
 // Abstract control element that can have child elements
-export default fabric.util.createClass(fabric.Rect, {
+export default fabric.util.createClass(Control, {
 
   type: 'content.control',
 

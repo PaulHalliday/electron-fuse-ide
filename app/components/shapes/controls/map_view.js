@@ -21,7 +21,6 @@ export default fabric.util.createClass(Panel, {
 
   toObject: function() {
     return fabric.util.object.extend(this.callSuper('toObject'), {
-      children: this.get('children')
     });
   },
 
