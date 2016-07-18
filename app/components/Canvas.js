@@ -28,6 +28,11 @@ class Canvas extends Component {
     this.setState({
       color: e.target.value
     })
+
+    console.log('current', this.currentObj, e.target.value);
+    this.currentObj.set({fill: e.target.value});
+    this.screen.renderAll();
+    console.log('changed', this.currentObj);
   }
 
   @autobind
@@ -47,19 +52,20 @@ class Canvas extends Component {
   @autobind
   _addRect() {
     console.log('Add rect', this.state.rectangles.length);
-    this.state.rectangles.push(this._newRectangle(this.state.rectangles.length));
+    var rect = this._newRectangle();
+    this.state.rectangles.push(rect);
 
     this.rectangles = this.state.rectangles.slice();
 
-    this.setState({rectangles: this.rectangles})
+    this.setState({rectangles: this.state.rectangles})
     console.log('rects', this.state.rectangles.length);
-    this._draw();
+    this._drawRect(rect);
   }
 
   @autobind
   _newRectangle(index) {
     return {
-      index: index,
+      index: this.state.rectangles.length,
       left: this.state.startX || 100,
       top: this.state.startY || 100,
       fill: this.state.color || 'red',
@@ -78,24 +84,31 @@ class Canvas extends Component {
     }
     this.rectangles[index].left = obj.left;
     this.rectangles[index].top = obj.top;
+    this.rectangles[index].angle = obj.angle;
+    this.rectangles[index].skewX = obj.skewX;
+    this.rectangles[index].skewY = obj.skewY;
+
     console.log('updated rectangles', this.rectangles);
     this.setState({rectangles: this.rectangles})
     // this._draw();
   }
 
-  @autobind
-  _draw() {
-    this.screen = new fabric.Canvas('screen');
-    console.log('Draw', this.state.rectangles.length);
-
-    for (let rectObj of this.state.rectangles) {
-      this._drawRect(rectObj);
-    }
-  }
+  // @autobind
+  // _draw() {
+  //   this.screen = new fabric.Canvas('screen');
+  //   this.rects = [];
+  //   console.log('Draw', this.state.rectangles.length);
+  //
+  //   for (let rectObj of this.state.rectangles) {
+  //     this._drawRect(rectObj);
+  //   }
+  // }
 
   _drawRect(rectObj) {
+    this.screen = this.screen || new fabric.Canvas('screen');
+    this.rects = this.rects || [];
     console.log('Rect obj', rectObj);
-    var rect = new fabric.Rect(rectObj);
+    let rect = new fabric.Rect(rectObj);
     console.log('new rectangle', rect);
 
     rect.on('selected', () => {
@@ -104,7 +117,7 @@ class Canvas extends Component {
 
     rect.on('modified', () => {
       console.log('modified:', rect);
-      this._updateRectangle(rect);
+      // this._updateRectangle(rect);
     });
 
     rect.on('moving', () => {
@@ -116,6 +129,8 @@ class Canvas extends Component {
     });
 
     // "add" rectangle onto canvas
+    this.rects.push(rect);
+    this.currentObj = rect;
     this.screen.add(rect);
   }
 
@@ -128,9 +143,9 @@ class Canvas extends Component {
           </Link>
         </div>
         <div>
-          <label for="x">X:</label>
+          <label htmlFor="x">X:</label>
           <input id="x" type="text" value={this.state.selectX} onChange={this._setSelectX} />
-          <label for="y">Y</label>
+          <label htmlFor="y">Y</label>
           <input id="y" type="text" value={this.state.selectY} onChange={this._setSelectY} />
           <input
              type="button"
