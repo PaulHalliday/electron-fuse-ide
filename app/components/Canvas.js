@@ -262,6 +262,13 @@ class Canvas extends Component {
   //   textBackgroundColor: 'rgb(0,200,0)'
   // });
 
+  // eventBinding
+  // canvas.addEventListener('dblclick', function(e) {
+  //   var mouse = myState.getMouse(e);
+  //   myState.addShape(new Shape(mouse.x - 10, mouse.y - 10, 20, 20,
+  //                              'rgba(0,255,0,.6)'));
+  // }, true);
+
   @autobind
   _drawRect(obj) {
     this.screen = this.screen || new fabric.Canvas('screen', this.canvasSettings);
