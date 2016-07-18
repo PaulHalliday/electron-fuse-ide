@@ -1,33 +1,26 @@
-// ColumnCount : int UX
-// Number of columns to lay out.
-// ColumnSize : float UX
-// Set size of a column.
-// ColumnSpacing : float UX
-// Spacing between each column.
-// ItemSpacing : float UX
-// Spacing between each item of a column.
-// Orientation : Orientation UX
-// The orientation in which columns are arranged.
-// Sizing : ColumnLayoutSizing
-
 import fabric from 'fabric';
 
 // @CircleLayout must be placed inside a Panel, and will apply to the elements inside it.
 export default fabric.util.createClass({
 
-  type: 'fuse.match',
+  type: 'fuse.case',
 
   initialize: function(options) {
     options || (options = {
     });
 
-    this.callSuper('initialize', options);
-    this.set('value', options.value || []);
-  },
+    // must be child of match
+    if (options.parent.type !== 'fuse.match') {
+      throw 'Must be child of a Match';
+    }
 
+    this.callSuper('initialize', options);
+    this.set('test', options.test || '');
+  },
+a
   toObject: function() {
     return fabric.util.object.extend(this.callSuper('toObject'), {
-      value: this.get('value')
+      test: this.get('test')
     });
   },
 
