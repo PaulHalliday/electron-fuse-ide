@@ -20,7 +20,5 @@ export default fabric.util.createClass(fabric.Rect, {
 
   _render: function(ctx) {
     this.callSuper('_render', ctx);
-
-    // child.render();
   }
 });

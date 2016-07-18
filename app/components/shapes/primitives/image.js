@@ -5,35 +5,35 @@ import Panel from '../layout/panel';
 
 export default fabric.util.createClass(Panel, {
 
-  type: 'fuse.rectangle',
+  type: 'fuse.image',
 
   initialize: function(options) {
     options || (options = { });
 
     this.callSuper('initialize', options);
-    this.set('cRadius', options.cRadius || 0);
+    this.set('text', options.text || '');
   },
 
   toObject: function() {
     return fabric.util.object.extend(this.callSuper('toObject'), {
-      cornerRadius: this.get('cornerRadius')
+      label: this.get('text')
     });
   },
 
   _render: function(context) {
     this.callSuper('_render', context);
 
-    var cRadius = this.corneRadius;
+    var cornerRadius = 20;
 
     // Reference rectangle without rounding, for size comparison
-    context.fillRect(this.left, this.top, this.width, this.height);
+    context.fillRect(200, 50, rectWidth, rectHeight);
 
     // Set faux rounded corners
     context.lineJoin = 'round';
-    context.lineWidth = cRadius;
+    context.lineWidth = cornerRadius;
 
     // Change origin and dimensions to match true size (a stroke makes the shape a bit larger)
-    context.strokeRect(this.left + (cRadius/2), this.top + (cRadius/2), this.width - cRadius, this.height - cRadius);
-    context.fillRect(this.left + (cRadius/2), this.top + (cRadius/2), this.width - cRadius, this.height - cRadius);
+    context.strokeRect(rectX+(cornerRadius/2), rectY+(cornerRadius/2), rectWidth-cornerRadius, rectHeight-cornerRadius);
+    context.fillRect(rectX+(cornerRadius/2), rectY+(cornerRadius/2), rectWidth-cornerRadius, rectHeight-cornerRadius);
   }
 });
