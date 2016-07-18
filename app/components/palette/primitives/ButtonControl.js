@@ -2,6 +2,22 @@ import React, { Component, PropTypes } from 'react';
 import autobind from 'autobind-decorator';
 import PrimitiveControl from './PrimitiveControl';
 
+import roundedRectangle from 'canvas-rounded-rectangle';
+
+const style = {
+    top: 60,
+    left: 80,
+    width: 100,
+    height: 50,
+    stroke: '#3333ff',
+    fill: '#fffaaa',
+    borderRadius: 5,
+    strokeWidth: 2,
+    hover: {
+        stroke: '#ff3333'
+    }
+}
+
 export default class ButtonControl extends PrimitiveControl {
   updateCanvas() {
     const ctx = this.canvas.getContext('2d');
@@ -10,12 +26,18 @@ export default class ButtonControl extends PrimitiveControl {
     var width = 50;
     var height = 20;
 
-    ctx.fillRect(x - width/2, y - height/2, x + width/2, y + height/2);
+    const path = roundedRectangle(style);
+    ctx.lineWidth = style.strokeWidth;
+    ctx.strokeStyle = style.stroke;
+    ctx.fill = style.fill;
+    ctx.fill(path);
+    ctx.stroke(path);
 
     ctx.font = '14px Arial';
     ctx.font = "14px Arial";
     ctx.textAlign= 'center';
-    ctx.fillText('Press me', x, y);
+
+    ctx.fillText('Push', x, y);
   }
   render() {
     return (
