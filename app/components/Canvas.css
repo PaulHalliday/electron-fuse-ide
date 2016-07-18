@@ -1,0 +1,19 @@
+.canvas {
+  border: 2;
+}
+
+.backButton {
+  position: absolute;
+}
+
+/*.toolbar {
+  border: 1;
+  border-color: white;
+  border-style: solid;
+}
+
+.main {
+  border: 1;
+  border-color: gray;
+  border-style: solid;
+}*/

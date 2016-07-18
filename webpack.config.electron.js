@@ -14,6 +14,10 @@ export default {
     filename: './main.js'
   },
 
+  loaders: [
+    ...baseConfig.module.loaders,
+  ],
+
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
