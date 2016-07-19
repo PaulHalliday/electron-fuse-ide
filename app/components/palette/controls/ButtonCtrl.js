@@ -18,7 +18,7 @@ const style = {
     }
 }
 
-export default class ButtonControl extends PrimitiveControl {
+export default class ButtonCtrl extends PrimitiveCtrl {
   updateCanvas() {
     const ctx = this.canvas.getContext('2d');
     var x = canvas.width / 2;
@@ -37,7 +37,7 @@ export default class ButtonControl extends PrimitiveControl {
     ctx.font = "14px Arial";
     ctx.textAlign= 'center';
 
-    ctx.fillText('Push', x, y);
+    ctx.fillText('Press me', x, y);
   }
   render() {
     return (
