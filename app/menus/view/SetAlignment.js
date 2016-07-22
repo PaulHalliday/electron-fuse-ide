@@ -9,15 +9,15 @@ class LeftAlign {
 }
 
 var menus = {
-  left: {
+  alignLeft: {
     class: LeftAlign,
     icon: 'align-left', // fa icon
   },
-  center: {
+  alignCenter: {
     class: CenterAlign,
     icon: 'align-center', // fa icon
   },
-  right: {
+  alignRight: {
     class: RightAlign,
     icon: 'align-right', // fa icon
 

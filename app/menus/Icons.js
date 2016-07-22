@@ -5,6 +5,8 @@ var iconName = function(name) {
 export default Icons = {
   'align-left': 'align-left',
   'align-center': 'align-center',
-  'align-right': 'align-right'
+  'align-right': 'align-right',
+  undo: 'undo',
+  redo: 'repeat',
   // ...
 }

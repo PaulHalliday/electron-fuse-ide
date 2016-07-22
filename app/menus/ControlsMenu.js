@@ -6,11 +6,7 @@ export default var ControlsMenu =  {
   // default panel
   composite: {
     label: 'Composite',
-    menus: {
-      settings: settings, // common control settings
-      addView: addView,
-      layout: layout
-    }
+    class: CompositeMenu,
   },
   button: {
     label: 'Button',
