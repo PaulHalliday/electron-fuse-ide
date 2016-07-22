@@ -1,59 +1,22 @@
-import alignment from './alignment';
-import ViewMenu from '../view'
-
+import Slider from './Slider';
+import Switch from './Switch';
+import Button from './Button';
+import MapView from './MapView';
+import WebView from './WebView';
+import TextInput from './TextInput';
+import TextArea from './TextArea';
+import Composite from './Composite';
 
 // each control has general settings and some particulars to that control
 // The menus point to menus which are collected into a single menu at that level
 export default var ControlsMenu =  {
   // default panel
-  composite: {
-    label: 'Composite',
-    class: CompositeMenu,
-  },
-  button: {
-    label: 'Button',
-    menus: {
-      settings: settings,
-      label: label
-    }
-  },
+  composite: Composite,
+  button: Button,
   slider: Slider,
-    label: 'Slider'  
-  },
-  switch: {
-    label: 'Slider',
-    menus: {
-      settings: settings,
-      switch: switch
-    }
-  },
-  mapView: {
-    label: 'Slider',
-    menus: {
-      settings: settings,
-      mapView: mapView
-    }
-  },
-  webView: {
-    label: 'Slider',
-    menus: {
-      settings: settings,
-      webView: webView
-    }
-  },
-  textInput: {
-    label: 'Text input',
-    menus: {
-      settings: settings,
-      textInput: textInput
-    }
-  },
-  textArea: {
-    label: 'MultiText',
-    menus: {
-      settings: settings,
-      textInput: textInput,
-      textArea: textArea
-    }
-  }
+  switch: Switch,
+  mapView: MapView,
+  webView: WebView,
+  textInput: TextInput,
+  textArea: TextArea
 };

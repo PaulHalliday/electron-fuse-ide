@@ -1,11 +1,11 @@
 class IndentLeft extends Action {
-  onClick(e) {
+  onSelect(e) {
     target.setIndent('left');
   }
 }
 
 class IndentRight extends Action {
-  onClick(e) {
+  onSelect(e) {
     target.setIndent('right');
   }
 }

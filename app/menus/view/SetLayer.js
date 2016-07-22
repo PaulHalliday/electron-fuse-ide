@@ -3,7 +3,7 @@ class SendToBack {
     this.target = target;
   }
 
-  onClick(e) {
+  onSelect(e) {
     target.parent.moveTo(0, target);
   }
 }
@@ -13,7 +13,7 @@ class SendToFront {
     this.target = target;
   }
 
-  onClick(e) {
+  onSelect(e) {
     target.parent.moveTo(parent.kids.length, target);
   }
 }
@@ -24,7 +24,7 @@ class OneBack {
     this.target = target;
   }
 
-  onClick(e) {
+  onSelect(e) {
     var pos = target.parent.find(target).position;
     target.parent.moveTo(pos - 1, target);
   }
@@ -35,7 +35,7 @@ class OneForward {
     this.target = target;
   }
 
-  onClick(e) {
+  onSelect(e) {
     var pos = target.parent.find(target).position;
     target.parent.moveTo(pos + 1, target);
   }

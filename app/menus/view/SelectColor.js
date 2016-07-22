@@ -1,29 +1,18 @@
-class LeftAlign {
-  constructor(target) {
-    this.target = target;
-  }
+import { BackgroundColor, StrokeColor, FillColor } from './SetColor';
 
-  onClick(e) {
-    target.setAlignment('left');
-  }
-}
-
-var menus = {
+export default {
   stroke: {
-    class: SetStroke,
+    class: StrokeColor,
     icon: 'pencil', // fa icon
   },
   background: {
-    class: CenterAlign,
-    icon: 'align-center', // fa icon
+    class: BackgroundColor,
+    icon: 'background', // fa icon
   },
   fill: {
-    class: RightAlign,
-    icon: 'align-right', // fa icon
+    class: FillColor,
+    icon: 'fill', // fa icon
 
   }
 }
 
-export default class Alignment {
-
-}

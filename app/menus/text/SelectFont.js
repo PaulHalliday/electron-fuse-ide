@@ -3,7 +3,7 @@ class Font extends Action {
   render() {
   }
 
-  onClick(e) {
+  onSelect(e) {
     target.setTextFont(e.value);
   }
 }

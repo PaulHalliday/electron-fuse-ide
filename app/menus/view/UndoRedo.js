@@ -1,15 +1,11 @@
 class UndoAction {
-  constructor(target) {
-    this.target = target;
-  }
-
-  onClick(e) {
+  onSelect(e) {
     this.ctx.actions.undo();
   }
 }
 
 class RedoAction extends Action {
-  onClick(e) {
+  onSelect(e) {
     this.ctx.actions.redo();
   }
 }
@@ -17,11 +13,13 @@ class RedoAction extends Action {
 
 var menus = {
   undo: {
-    class: UndoAlign,
-    icon: 'undo', // fa icon
+    label: 'Undo',
+    class: UndoAction,
+    icon: 'undo' // fa icon
   },
   left: {
+    label: 'Redo',
     class: RedoAction,
-    icon: 'redo', // fa icon
+    icon: 'redo' // fa icon
   }
 }

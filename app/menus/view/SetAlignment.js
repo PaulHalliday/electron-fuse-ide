@@ -1,14 +1,29 @@
-class LeftAlign {
-  constructor(target) {
-    this.target = target;
-  }
-
-  onClick(e) {
-    target.setAlignment('left');
+class Alignment extends Property {
+  setAlign(align) {
+    this.setProperty({alignment: align});
   }
 }
 
-var menus = {
+class LeftAlign extends Alignment {
+  onSelect(e) {
+    this.setAlign('left'});
+  }
+}
+
+class CenterAlign extends Alignment {
+  onSelect(e) {
+    this.setAlign('center'});
+  }
+}
+
+class RightAlign extends Alignment {
+  onSelect(e) {
+    this.setAlign('right'});
+  }
+}
+
+
+export default  menus = {
   alignLeft: {
     class: LeftAlign,
     icon: 'align-left', // fa icon
@@ -22,8 +37,4 @@ var menus = {
     icon: 'align-right', // fa icon
 
   }
-}
-
-export default class Alignment {
-
 }

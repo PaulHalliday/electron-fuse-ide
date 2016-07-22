@@ -4,14 +4,24 @@ class SetTags {
     this.target = target;
   }
 
-  onClick(e) {
+  display() {
+    // display current tags
+  }
+
+  onSelect(e) {
     // tags is a Set
     target.setTag(e.value);
+  }
+
+  onSelectMany(e) {
+    // tags is a Set
+    target.setTags(e.value);
   }
 }
 
 var menus = {
-  tag: {
+  tags: {
+    label: 'tags',
     class: SetTags,
     icon: 'tags', // fa icon
   }

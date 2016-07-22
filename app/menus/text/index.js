@@ -1,16 +1,21 @@
-class TextMenu extends MenuItem {
+import Menu from '../menu';
+import SelectFont from '../SelectFont';
+import FontStyle from '../FontStyle';
+import SetIndentation from './SetIndentation';
+
+class TextMenu extends Menu {
   displayCondition() {
     this.clipBoard.items > 0;
   }
 }
 
-var menus = {
-  textMenu: {
-    class: TextMenu,
-    menus: {
-      selectFont: SelectFont,
-      fontStyle: FontStyle,
-      setIndentation: SetIndentation
-    }
+export default {
+  label: 'Text',
+  class: TextMenu,
+  icon: 'text',
+  menus: {
+    selectFont: SelectFont,
+    fontStyle: FontStyle,
+    setIndentation: SetIndentation
   }
 }

@@ -1,17 +1,17 @@
 class Bold extends Action {
-  onClick(e) {
+  onSelect(e) {
     target.setTextStyle('bold');
   }
 }
 
 class Italic extends Action {
-  onClick(e) {
+  onSelect(e) {
     target.setTextStyle('italic');
   }
 }
 
 class Underline extends Action {
-  onClick(e) {
+  onSelect(e) {
     target.setTextStyle('underline');
   }
 }

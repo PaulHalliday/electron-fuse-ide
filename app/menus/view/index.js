@@ -1,5 +1,7 @@
 import ClipBoardActions from './ClipBoardActions';
 
 export default {
-  ClipBoardActions: ClipBoardActions
+  ClipBoardActions: ClipBoardActions,
+  Misc: Misc,
+  SetColor: SetColor
 }

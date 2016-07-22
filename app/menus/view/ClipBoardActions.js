@@ -6,14 +6,14 @@ class MenuItem {
 }
 
 class Copy extends MenuItem {
-  onClick(e) {
+  onSelect(e) {
     target.setAlignment('left');
   }
 }
 
 // Delete
 class Cut extends MenuItem {
-  onClick(e) {
+  onSelect(e) {
     target.setAlignment('left');
   }
 }
@@ -24,7 +24,7 @@ class Paste extends MenuItem {
     this.clipBoard.items > 0;
   }
 
-  onClick(e) {
+  onSelect(e) {
     target.setAlignment('left');
   }
 }
