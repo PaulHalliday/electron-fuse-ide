@@ -11,13 +11,16 @@ class LeftAlign {
 var menus = {
   left: {
     class: LeftAlign,
-    icon: 'left', // fa icon
+    icon: 'align-left', // fa icon
   },
   center: {
-
+    class: CenterAlign,
+    icon: 'align-center', // fa icon
   },
   right: {
-    class: Right
+    class: RightAlign,
+    icon: 'align-right', // fa icon
+
   }
 }
 

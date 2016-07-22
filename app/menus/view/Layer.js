@@ -4,7 +4,40 @@ class SendToBack {
   }
 
   onClick(e) {
-    target.setAlignment('left');
+    target.parent.moveTo(0, target);
+  }
+}
+
+class SendToFront {
+  constructor(target) {
+    this.target = target;
+  }
+
+  onClick(e) {
+    target.parent.moveTo(parent.kids.length, target);
+  }
+}
+
+
+class OneBack {
+  constructor(target) {
+    this.target = target;
+  }
+
+  onClick(e) {
+    var pos = target.parent.find(target).position;
+    target.parent.moveTo(pos - 1, target);
+  }
+}
+
+class OneForward {
+  constructor(target) {
+    this.target = target;
+  }
+
+  onClick(e) {
+    var pos = target.parent.find(target).position;
+    target.parent.moveTo(pos + 1, target);
   }
 }
 
@@ -16,7 +49,7 @@ var menus = {
   },
   toFront: {
     label: 'To front',
-    class: SendToBack
+    class: SendToFront
     icon: 'toBack', // fa icon
   },
   back: {
