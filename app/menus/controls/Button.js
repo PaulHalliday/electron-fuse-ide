@@ -1,7 +1,13 @@
+import View from '../view';
+
+class Button extends Menu {
+
+}
+
 export default {
   label: 'Button',
   menus: {
-    settings: settings,
-    label: label
+    view: View,
+    button: Button
   }
 }

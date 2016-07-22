@@ -1,6 +1,7 @@
 import View from '../view';
+import Menu from '../menu';
 
-class WebView {
+class WebView extends Menu {
 
 }
 

@@ -11,7 +11,7 @@ class RedoAction extends Action {
 }
 
 
-var menus = {
+export default {
   undo: {
     label: 'Undo',
     class: UndoAction,

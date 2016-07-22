@@ -41,7 +41,7 @@ class OneForward {
   }
 }
 
-var menus = {
+export default {
   toBack: {
     label: 'To back',
     class: SendToBack
@@ -64,6 +64,3 @@ var menus = {
   },
 }
 
-export default class Layer {
-
-}

@@ -1,7 +1,8 @@
+import Menu from '../menu';
 import View from '../view';
 import TextInput from './TextInput';
 
-class TextArea {
+class TextArea extends Menu {
 
 }
 

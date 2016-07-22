@@ -8,8 +8,13 @@ class Template {
 }
 
 export default {
-  ClipBoardActions: ClipBoardActions,
-  Misc: Misc,
-  SetColor: SetColor
-  Template: Template,
+  label: 'View',
+  class: ViewMenu,
+  icon: 'view',
+  menus: {
+    ClipBoardActions: ClipBoardActions,
+    Misc: Misc,
+    SetColor: SetColor,
+    Template: Template
+  }
 }

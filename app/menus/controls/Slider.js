@@ -1,4 +1,6 @@
 import zebra from 'zebra';
+import Control from './Control';
+import View from './View';
 
 // TODO
 class Range {
@@ -46,7 +48,7 @@ export default {
   class: Slider,
   icon: 'slider',
   menus: {
-    view: ViewMenu,
+    view: View,
     settings: SliderSettings
   }
 }

@@ -34,7 +34,7 @@ class SetCenter extends Position {
   }
 }
 
-export default  menus = {
+export default {
   display: null, // for alternative menu display manager, such as cross
   setTop: {
     class: SetTop,

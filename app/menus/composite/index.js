@@ -1,5 +1,5 @@
 import SetKidPosition from './SetKidPosition'
-ViewMenu from './ViewMenu';
+import View from '../view';
 
 class Reorder {
 
@@ -13,10 +13,13 @@ var reorder = {
 }
 
 var menus = {
-    menus: {
-      settings: ViewMenu, // common control settings
-      addView: addView,
-      layout: layout,
-      reorder: reorder
-    }
+  label: 'Composite',
+  class: CompositeView,
+  icon: 'composite',
+  menus: {
+    view: View.menus, // common control settings
+    addView: addView,
+    layout: layout,
+    reorder: reorder
+  }
 }

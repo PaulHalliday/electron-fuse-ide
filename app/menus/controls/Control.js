@@ -3,3 +3,7 @@ export defaultSettings = {
   background : "blue",
   border     : "plain"
 }
+
+export default class Control{
+
+}

@@ -23,7 +23,7 @@ class RightAlign extends Alignment {
 }
 
 
-export default  menus = {
+export default {
   alignLeft: {
     class: LeftAlign,
     icon: 'align-left', // fa icon

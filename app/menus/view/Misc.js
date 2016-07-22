@@ -19,10 +19,19 @@ class SetTags {
   }
 }
 
-var menus = {
-  tags: {
-    label: 'tags',
-    class: SetTags,
-    icon: 'tags', // fa icon
+class Misc {
+
+}
+
+export default {
+  label: 'Misc.'
+  class: Misc,
+  icon: 'misc',
+  menus: {
+    tags: {
+      label: 'tags',
+      class: SetTags,
+      icon: 'tags' // fa icon
+    }
   }
 }
