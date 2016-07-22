@@ -1,4 +1,6 @@
 import alignment from './alignment';
+import ViewMenu from '../view'
+
 
 // each control has general settings and some particulars to that control
 // The menus point to menus which are collected into a single menu at that level
@@ -15,12 +17,8 @@ export default var ControlsMenu =  {
       label: label
     }
   },
-  slider: {
-    label: 'Slider',
-    menus: {
-      settings: settings,
-      slider: slider
-    }
+  slider: Slider,
+    label: 'Slider'  
   },
   switch: {
     label: 'Slider',
