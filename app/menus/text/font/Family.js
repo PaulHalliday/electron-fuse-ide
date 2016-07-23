@@ -1,16 +1,18 @@
-class Font extends Action {
+import Action from './TextAction';
+
+class FontFamily extends Action {
   // display available fonts
   render() {
   }
 
   onSelect(e) {
-    target.setTextFont(e.value);
+    this.setTextFont(e.value);
   }
 }
 
 var menus = {
   font: {
-    class: Font,
+    class: FontFamily,
     icon: 'font', // fa icon
   },
 }

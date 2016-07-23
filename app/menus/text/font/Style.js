@@ -1,3 +1,6 @@
+import zebra from 'zebra';
+import Action from './TextAction';
+
 class Bold extends Action {
   onSelect(e) {
     target.setTextStyle('bold');
@@ -16,7 +19,7 @@ class Underline extends Action {
   }
 }
 
-var menus = {
+export default {
   textBold: {
     class: Bold,
     icon: 'bold', // fa icon
@@ -31,5 +34,3 @@ var menus = {
   }
 
 }
-
-export default menus;

@@ -9,7 +9,7 @@ import Composite from './Composite';
 
 // each control has general settings and some particulars to that control
 // The menus point to menus which are collected into a single menu at that level
-export default var ControlsMenu =  {
+export default {
   // default panel
   composite: Composite,
   button: Button,

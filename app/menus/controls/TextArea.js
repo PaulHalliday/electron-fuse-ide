@@ -1,15 +1,16 @@
+import zebra from 'zebra';
 import Menu from '../menu';
-import View from '../view';
 import TextInput from './TextInput';
 
-class TextArea extends Menu {
-
+class TextArea extends TextInput {
+  get control() {
+    new zebra.ui.TextArea(this.properties);
+  }
 }
 
 export default {
   label: 'MultiText',
   menus: {
-    view: View,
     textInput: TextInput,
     textArea: TextArea
   }

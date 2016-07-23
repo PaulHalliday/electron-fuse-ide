@@ -1,5 +1,6 @@
-import SetKidPosition from './SetKidPosition'
 import View from '../view';
+import Layout from './Layout';
+import AddView from './AddView';
 
 class Reorder {
 
@@ -9,7 +10,6 @@ var reorder = {
   label: 'Reorder',
   class: Reorder,
   icon: 'reorder'
-  menus: SetKidPosition
 }
 
 var menus = {
@@ -18,8 +18,8 @@ var menus = {
   icon: 'composite',
   menus: {
     view: View.menus, // common control settings
-    addView: addView,
-    layout: layout,
+    addView: AddView,
+    layout: Layout,
     reorder: reorder
   }
 }

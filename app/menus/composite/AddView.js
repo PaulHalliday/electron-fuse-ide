@@ -1,18 +1,21 @@
+import Menu from '../menu';
 import Controls from './Controls';
 
-class AddView {
-  onSelect(e) {
-    this.displaySubMenus();
+class AddView extends Menu {
+  onSelect() {
+    this.displayMenus();
   }
 }
 
 export default {
-  columnLayout: {
-    label: 'Column',
-    class: AddView
-    icon: 'plus', // fa icon
-    menus: {
-      controls: Controls
-    }
+  label: 'Add',
+  class: AddView,
+  icon: 'plus', // fa icon
+  defaultSelection: 'button',
+  menus: {
+    // since only one item, we show children directly!
+    // controls that can be added
+    controls: Controls
   }
 }
+

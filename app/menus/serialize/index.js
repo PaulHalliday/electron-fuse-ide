@@ -28,7 +28,8 @@ class Import extends Action {
 }
 
 
-var menus = {
+// should be callable on any UI Component
+export default {
   share: {
     label: 'Share',
     class: Share,

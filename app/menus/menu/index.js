@@ -1,13 +1,10 @@
-export default class Menu {
-  constructor(ctx, target) {
-    this.ctx = ctx;
-  }
-
-  back() {
-    this.ctx.menu.back();
+export default class Menu extends MenuItem {
+  constructor(ctx, target, items) {
+    super();
+    this.items = items;
   }
 
   displaySubMenus() {
-    this.ctx.menu.current.menus.display();
+    this.items.display();
   }
 }

@@ -1,3 +1,6 @@
+import zebra from 'zebra';
+import Action from './TextAction';
+
 class IndentLeft extends Action {
   onSelect(e) {
     target.setIndent('left');
@@ -11,7 +14,7 @@ class IndentRight extends Action {
 }
 
 
-var menus = {
+export default {
   indentLeft: {
     class: IndentLeft,
     icon: 'align-left', // fa icon
@@ -22,5 +25,3 @@ var menus = {
 
   }
 }
-
-export default menus;
