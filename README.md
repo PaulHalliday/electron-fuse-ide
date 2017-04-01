@@ -1,5 +1,7 @@
 # Electron React example with Canvas
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kristianmandrup/electron-fuse-ide.svg)](https://greenkeeper.io/)
+
 Canvas with React:
 
 - [using react w html5 canvas](https://medium.com/@lavrton/using-react-with-html5-canvas-871d07d8d753#.ex1hm11rj)
